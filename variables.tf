@@ -19,12 +19,6 @@ variable "secure_parameters" {
   default     = {}
 }
 
-variable "prevent_overwrite" {
-  description = "List of parameter names to prevent overwrite for"
-  type        = list(string)
-  default     = []
-}
-
 variable "kms_key_id" {
   type        = string
   description = "The KMS key to use for encryption"
