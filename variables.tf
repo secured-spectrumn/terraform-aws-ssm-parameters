@@ -1,5 +1,6 @@
 variable "name_prefix" {
   description = "Path used for each SSM parameter created by the module"
+  type        = string
 }
 
 variable "tags" {
@@ -27,6 +28,12 @@ variable "kms_key_id" {
 
 variable "advanced_tier" {
   description = "List of parameter names that should have tier set to Advanced"
+  type        = list(string)
+  default     = []
+}
+
+variable "prevent_overwrite" {
+  description = "[Deprecated - will be removed properly in 6.x] List of parameter names to prevent overwrite for"
   type        = list(string)
   default     = []
 }
